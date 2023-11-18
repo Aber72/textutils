@@ -36,14 +36,14 @@ export default function Textform(props) {
             </div>
             <button className="btn btn-primary" onClick={handleUpClick}>Convert to Uppercase</button>
             
-            <button className="btn btn-primary mx-2" onClick={handleLwClick}>Convert to Lowercase</button>
-            <button className="btn btn-primary mx-2" onClick={handleCopy}>copy</button>
+            <button className="btn btn-primary mx-2 my-1" onClick={handleLwClick}>Convert to Lowercase</button>
+            <button className="btn btn-primary mx-2 my-1" onClick={handleCopy}>copy</button>
         </div>
 
         <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
 
             <h1>Your text summary </h1>
-            <p>{text.split(" ").length} words and {text.length} characters</p>
+            <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
             <p> {0.008*text.split(" ").length} minutes read</p>
             <h2>Preview</h2>
             <p>{text.length>0?text:"enter something in text box"}</p>
